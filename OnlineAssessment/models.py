@@ -22,10 +22,11 @@ class User(db.Model, UserMixin):
     # This connects Answer to a User Author.
     answers = db.relationship('Answer', backref='author', lazy=True)
 
-    def __init__(self, email, username, password):
+    def __init__(self, email, username, password, role):
         self.email = email
         self.username = username
         self.password_hash = generate_password_hash(password)
+        self.role = role
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)

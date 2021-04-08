@@ -1,5 +1,8 @@
+# import blueprint
 from OnlineAssessment.error_pages.handlers import error_pages
 from OnlineAssessment.core.views import core
+from OnlineAssessment.users.views import users
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -8,6 +11,9 @@ from flask_login import LoginManager
 
 
 app = Flask(__name__)
+
+#set environment variables at the command line
+app.config['SECRET_KEY'] = 'agileWeb'
 
 # Database setup
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -34,4 +40,5 @@ login_manager.login_view = "users.login"
 
 # Register blueprint
 app.register_blueprint(core)
+app.register_blueprint(users)
 app.register_blueprint(error_pages)
