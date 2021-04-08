@@ -1,8 +1,3 @@
-# import blueprint
-from OnlineAssessment.error_pages.handlers import error_pages
-from OnlineAssessment.core.views import core
-from OnlineAssessment.users.views import users
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -17,8 +12,7 @@ app.config['SECRET_KEY'] = 'agileWeb'
 
 # Database setup
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
-    os.path.join(basedir, 'data.sqlite')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # entry point of db
@@ -37,7 +31,9 @@ login_manager.login_view = "users.login"
 
 
 # use blueprint to route
-
+from OnlineAssessment.error_pages.handlers import error_pages
+from OnlineAssessment.core.views import core
+from OnlineAssessment.users.views import users
 # Register blueprint
 app.register_blueprint(core)
 app.register_blueprint(users)
