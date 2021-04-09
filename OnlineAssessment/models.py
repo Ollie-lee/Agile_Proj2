@@ -20,7 +20,7 @@ class User(db.Model, UserMixin):
     role = db.Column(db.Enum('USER', 'ADMIN'),
                      nullable=False, server_default=("USER"))
     # This connects Answer to a User Author.
-    answers = db.relationship('Answer', backref='author', lazy=True)
+    answers = db.relationship('Answer', backref='author_answers', lazy=True)
 
     def __init__(self, email, username, password, role):
         self.email = email
@@ -39,23 +39,25 @@ class Question(db.Model):
     # Create a table in the db
     __tablename__ = 'questions'
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(140), nullable=False)
     content = db.Column(db.String(140), nullable=False)
-    # This connects Question to a Answer.
+    # This connects Question to a Answer, specified by user
     answers = db.relationship('Answer', backref='question', lazy=True)
+    # Specified by admin
+    correct_answer = db.Column(db.String(140), nullable=False)
 
-    def __init__(self, content):
-        self.email = content
+    def __init__(self, title, content, correct_answer):
+        self.title = title
+        self.content = content
+        self.correct_answer = correct_answer
 
     def __repr__(self):
-        return f"Question Id: {self.id} --- Content: {self.content}"
+        return f"Question Id: {self.id} --- Title: {self.title} --- Content: {self.content} --- user_id: {self.correct_answer}"
 
 
 class Answer(db.Model):
     # Create a table in the db
     __tablename__ = 'answers'
-    # Setup the relationship to the User/Question table
-    author = db.relationship(User)
-    question = db.relationship(Question)
 
     id = db.Column(db.Integer, primary_key=True)
     # connect the Answer to a particular author/question
