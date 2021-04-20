@@ -83,6 +83,13 @@ test_question_relation = db.Table('test_question_relation',
                                             db.ForeignKey('tests.id')),
                                   )
 
+test_answer_relation = db.Table('test_answer_relation',
+                                db.Column('answer_id', db.Integer,
+                                          db.ForeignKey('answers.id')),
+                                db.Column('test_id', db.Integer,
+                                          db.ForeignKey('tests.id')),
+                                )
+
 
 class Test(db.Model):
     # Create a table in the db
@@ -94,6 +101,9 @@ class Test(db.Model):
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     questions = db.relationship('Question', secondary=test_question_relation, backref=db.backref(
         'questions_tests', lazy='dynamic'))
+    answers = db.relationship('Answer', secondary=test_answer_relation, backref=db.backref(
+        'answers_tests', lazy='dynamic'))
+    finish = db.Column(db.Boolean, default=False, nullable=False)
 
     def __init__(self, user_id):
         self.user_id = user_id
