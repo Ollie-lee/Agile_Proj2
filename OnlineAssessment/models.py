@@ -74,3 +74,29 @@ class Answer(db.Model):
 
     def __repr__(self):
         return f"Answer Id: {self.id} --- Date: {self.date} --- Content: {self.content} --- Author: {self.user_id} --- Question: {self.question_id}"
+
+
+test_question_relation = db.Table('test_question_relation',
+                                  db.Column('question_id', db.Integer,
+                                            db.ForeignKey('questions.id')),
+                                  db.Column('test_id', db.Integer,
+                                            db.ForeignKey('tests.id')),
+                                  )
+
+
+class Test(db.Model):
+    # Create a table in the db
+    __tablename__ = 'tests'
+
+    id = db.Column(db.Integer, primary_key=True)
+    # connect the Answer to a particular author/question
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    questions = db.relationship('Question', secondary=test_question_relation, backref=db.backref(
+        'questions_tests', lazy='dynamic'))
+
+    def __init__(self, user_id):
+        self.user_id = user_id
+
+    def __repr__(self):
+        return f"test Id: {self.id} "
