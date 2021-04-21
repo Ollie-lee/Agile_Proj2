@@ -12,14 +12,11 @@ tests = Blueprint('tests', __name__)
 @login_required
 def create_test():
     questions = Question.query.all()[:5]
-    # print(questions)
-    # print(current_user)
     test = Test(user_id=current_user.id, questions=questions)
-    # print(test)
     db.session.add(test)
     db.session.commit()
     flash("Test Created")
-    return redirect(url_for('core.index'))
+    return redirect('test/{}'.format(test.id))
 
 
 @tests.route('/test/<int:test_id>', methods=['GET', 'POST'])

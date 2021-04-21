@@ -1,3 +1,4 @@
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -32,11 +33,11 @@ login_manager.login_view = "users.login"
 
 
 # use blueprint to route
-from OnlineAssessment.error_pages.handlers import error_pages
-from OnlineAssessment.core.views import core
-from OnlineAssessment.users.views import users
-from OnlineAssessment.questions.views import questions
 from OnlineAssessment.tests.views import tests
+from OnlineAssessment.questions.views import questions
+from OnlineAssessment.users.views import users
+from OnlineAssessment.core.views import core
+from OnlineAssessment.error_pages.handlers import error_pages
 
 # Register blueprint
 app.register_blueprint(core)
@@ -45,12 +46,6 @@ app.register_blueprint(error_pages)
 app.register_blueprint(questions)
 app.register_blueprint(tests)
 
-# with app.app_context():
-#     if db.engine.url.drivername == 'sqlite':
-#         Migrate.init_app(app, db, render_as_batch=True)
-#     else:
-#         Migrate.init_app(app, db)
-
 
 def checkAnswer(answers, question):
     flag = False
@@ -58,8 +53,29 @@ def checkAnswer(answers, question):
         for answer in answers:
             if answer.question_id == question.id:
                 flag = True
-    print(flag)
     return flag
+
+
+def mapCorrectAnswer(question):
+    return question.correct_answer
+
+
+def isAnswerCorrect(answer, questions):
+    correctAnswers = map(mapCorrectAnswer, questions)
+    return (answer.content in correctAnswers)
+
+
+def calculateScore(answers, test, questions):
+    score = 0
+    correctAnswers = []
+    for answer in answers:
+        if isAnswerCorrect(answer, questions):
+            correctAnswers.append(answer)
+    if len(correctAnswers) > 0:
+        for correctAnswer in correctAnswers:
+            if correctAnswer.test_id == test.id:
+                score += 1
+    return score
 
 
 app.jinja_env.globals.update(checkAnswer=checkAnswer)

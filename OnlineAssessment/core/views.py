@@ -1,4 +1,5 @@
-from OnlineAssessment.models import Question
+from OnlineAssessment.models import Question, Test, Answer
+from flask_login import current_user, login_required
 from flask import render_template, request, Blueprint
 
 # using blueprint to help us do routing
@@ -12,7 +13,10 @@ def index():
     '''
     page = request.args.get('page', 1, type=int)
     questions = Question.query.paginate(page=page, per_page=5)
-    return render_template('index.html', questions=questions)
+    tests = Test.query.filter_by(user_id=current_user.id).all()
+    answers = Answer.query.filter_by(user_id=current_user.id).all()
+
+    return render_template('index.html', questions=questions, tests=tests, answers=answers)
 
 
 @core.route('/info')

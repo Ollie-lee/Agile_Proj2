@@ -24,18 +24,11 @@
 				{{ form.content.label(class="form-control-label") }}
 				{{ form.content(class="form-control form-control-lg ") }}
 			</div>
-			<div class="form-group">
-				{{ form.user.label(class="form-control-label") }}
-				{{ form.user(class="form-control form-control-lg") }}
-			</div>
-			<div class="form-group">
+			<div class="form-group" style="display: none;">
 				{{ form.question.label(class="form-control-label") }}
-				{{ form.question(class="form-control form-control-lg") }}
+				{{ form.question(class="form-control form-control-lg", value=question.id) }}
 			</div>
-			<div class="form-group">
-				{{ form.test.label(class="form-control-label") }}
-				{{ form.test(class="form-control form-control-lg") }}
-			</div>
+
 			<div class="form-group">
 				{{ form.submit(class="btn btn-outline-info") }}
 			</div>
