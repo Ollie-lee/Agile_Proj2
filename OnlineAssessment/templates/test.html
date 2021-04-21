@@ -3,6 +3,7 @@
 <div class="jumbotron">
 	<h1>Test</h1>
 	<div>{{test}}</div>
+	<div>{{answers}}</div>
 </div>
 
 <div class="container">
@@ -11,19 +12,14 @@
 		<div class="card-body">
 			<h2>{{ question.title }}
 			</h2>
-			<p class="card-text">{{ question.content[:100] }}...</p>
+			<p class="card-text">{{ question.content }}</p>
 		</div>
 
-		<!-- {% if true %}
-
+		{% if checkAnswer(answers, question)%}
+		<span>answered!!!!</span>
 		{% else %}
-
-		{% endif %} -->
-
-
 		<form class="form-group" method="POST">
 			{{ form.hidden_tag() }}
-
 			<div class="form-group">
 				{{ form.content.label(class="form-control-label") }}
 				{{ form.content(class="form-control form-control-lg ") }}
@@ -37,9 +33,14 @@
 				{{ form.question(class="form-control form-control-lg") }}
 			</div>
 			<div class="form-group">
+				{{ form.test.label(class="form-control-label") }}
+				{{ form.test(class="form-control form-control-lg") }}
+			</div>
+			<div class="form-group">
 				{{ form.submit(class="btn btn-outline-info") }}
 			</div>
 		</form>
+		{% endif %}
 	</div>
 	{% endfor %}
 </div>

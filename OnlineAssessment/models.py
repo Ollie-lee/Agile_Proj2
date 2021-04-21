@@ -68,13 +68,13 @@ class Answer(db.Model):
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     content = db.Column(db.String(140), nullable=False)
     finish = db.Column(db.Boolean, default=False, nullable=False)
-    # test_id = db.Column(db.Integer, db.ForeignKey('tests.id'), nullable=False)
+    test_id = db.Column(db.Integer, db.ForeignKey('tests.id'), nullable=False)
 
-    def __init__(self, content, user_id, question_id):
+    def __init__(self, content, user_id, question_id, test_id):
         self.content = content
         self.user_id = user_id
         self.question_id = question_id
-        # self.test_id = test_id
+        self.test_id = test_id
         self.finish = True
 
     def __repr__(self):
@@ -99,7 +99,7 @@ class Test(db.Model):
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     questions = db.relationship('Question', secondary=test_question_relation, backref=db.backref(
         'questions_tests', lazy='dynamic'))
-    # answers = db.relationship('Answer', backref='test_answers', lazy=True)
+    answers = db.relationship('Answer', backref='test_answers', lazy=True)
     finish = db.Column(db.Boolean, default=False, nullable=False)
 
     def __init__(self, user_id, questions):

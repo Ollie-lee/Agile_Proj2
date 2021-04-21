@@ -22,23 +22,21 @@ def create_test():
     return redirect(url_for('core.index'))
 
 
-@tests.route('/test/<int:test_id>')
+@tests.route('/test/<int:test_id>', methods=['GET', 'POST'])
 @login_required
 def test(test_id):
     test = Test.query.get_or_404(test_id)
-    # answers=Answer.query.filter_by(username='peter').all()
-
+    answers = Answer.query.filter_by(test_id=test_id).all()
     form = AnswerForm()
-
-    # if form.validate_on_submit():
-
-    #     question = Answer(
-    #         content=form.content.data,
-    #         user_id=form.user.data,
-    #         question_id=form.question.data
-    #     )
-    #     db.session.add(question)
-    #     db.session.commit()
-    #     flash("Question Created")
-    #     return redirect(url_for('core.index'))
-    return render_template('test.html', test=test, form=form)
+    if form.validate_on_submit():
+        answer = Answer(
+            content=form.content.data,
+            user_id=current_user.id,
+            question_id=form.question.data,
+            test_id=test_id,
+        )
+        db.session.add(answer)
+        db.session.commit()
+        flash("Question Created")
+        return redirect('test/{}'.format(test_id))
+    return render_template('test.html', test=test, form=form, answers=answers)

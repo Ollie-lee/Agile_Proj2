@@ -7,12 +7,13 @@ from flask_login import LoginManager
 
 app = Flask(__name__)
 
-#set environment variables at the command line
+# set environment variables at the command line
 app.config['SECRET_KEY'] = 'agileWeb'
 
 # Database setup
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
+    os.path.join(basedir, 'data.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # entry point of db
@@ -49,3 +50,16 @@ app.register_blueprint(tests)
 #         Migrate.init_app(app, db, render_as_batch=True)
 #     else:
 #         Migrate.init_app(app, db)
+
+
+def checkAnswer(answers, question):
+    flag = False
+    if len(answers) > 0:
+        for answer in answers:
+            if answer.question_id == question.id:
+                flag = True
+    print(flag)
+    return flag
+
+
+app.jinja_env.globals.update(checkAnswer=checkAnswer)
