@@ -26,19 +26,19 @@ def create_test():
 @login_required
 def test(test_id):
     test = Test.query.get_or_404(test_id)
-    answers=Answer.query.filter_by(username='peter').all()
+    # answers=Answer.query.filter_by(username='peter').all()
 
     form = AnswerForm()
 
-    if form.validate_on_submit():
+    # if form.validate_on_submit():
 
-        question = Answer(
-            content=form.content.data,
-            user_id=form.user.data,
-            question_id=form.question.data
-        )
-        db.session.add(question)
-        db.session.commit()
-        flash("Question Created")
-        return redirect(url_for('core.index'))
+    #     question = Answer(
+    #         content=form.content.data,
+    #         user_id=form.user.data,
+    #         question_id=form.question.data
+    #     )
+    #     db.session.add(question)
+    #     db.session.commit()
+    #     flash("Question Created")
+    #     return redirect(url_for('core.index'))
     return render_template('test.html', test=test, form=form)
