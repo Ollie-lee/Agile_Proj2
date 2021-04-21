@@ -26,6 +26,7 @@ def create_test():
 @login_required
 def test(test_id):
     test = Test.query.get_or_404(test_id)
+    answers=Answer.query.filter_by(username='peter').all()
 
     form = AnswerForm()
 
