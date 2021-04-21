@@ -3,7 +3,7 @@ from flask_login import current_user, login_required
 from OnlineAssessment import db
 from OnlineAssessment.models import Test, Question, Answer
 from sqlalchemy.sql.expression import func, select
-from OnlineAssessment.tests.forms import AnswerForm
+from OnlineAssessment.tests.forms import AnswerForm, TestForm
 
 tests = Blueprint('tests', __name__)
 
@@ -25,6 +25,7 @@ def test(test_id):
     test = Test.query.get_or_404(test_id)
     answers = Answer.query.filter_by(test_id=test_id).all()
     form = AnswerForm()
+    testForm = TestForm()
     if form.validate_on_submit():
         answer = Answer(
             content=form.content.data,
@@ -34,6 +35,11 @@ def test(test_id):
         )
         db.session.add(answer)
         db.session.commit()
-        flash("Question Created")
+        flash("Answer uploaded!")
         return redirect('test/{}'.format(test_id))
+    if testForm.validate_on_submit():
+        test.finish = True
+        db.session.commit()
+        flash("Test submitted!")
+        return redirect(url_for('core.index'))
     return render_template('test.html', test=test, form=form, answers=answers)

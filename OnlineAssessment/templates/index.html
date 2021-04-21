@@ -47,7 +47,7 @@
           href="{{ url_for('tests.test', test_id=test.id) }}">{{ 'Resume test {}'.format(test.id) }}</a>
       </h2>
       {% else %}
-      <span>Congratulation! you have finished this test! Your score is {{calculateScore(answers, test, questions)}}!</span>
+      <span>Congratulation! you have finished this test! Your score is {{calculateScore(answers, test, allQuestions)}}!</span>
       {% endif %}
 
     </div>

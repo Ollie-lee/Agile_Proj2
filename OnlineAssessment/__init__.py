@@ -33,12 +33,12 @@ login_manager.login_view = "users.login"
 
 
 # use blueprint to route
+
 from OnlineAssessment.tests.views import tests
 from OnlineAssessment.questions.views import questions
 from OnlineAssessment.users.views import users
 from OnlineAssessment.core.views import core
 from OnlineAssessment.error_pages.handlers import error_pages
-
 # Register blueprint
 app.register_blueprint(core)
 app.register_blueprint(users)
@@ -56,20 +56,28 @@ def checkAnswer(answers, question):
     return flag
 
 
-def mapCorrectAnswer(question):
-    return question.correct_answer
+def mapCorrectAnswers(allQuestions):
+    allCorrectAnswers = []
+    for question in allQuestions:
+        # print(question)
+        allCorrectAnswers.append(question.correct_answer)
+    return allCorrectAnswers
 
 
-def isAnswerCorrect(answer, questions):
-    correctAnswers = map(mapCorrectAnswer, questions)
-    return (answer.content in correctAnswers)
+def isAnswerCorrect(answer, allQuestions):
+    allcorrectAnswers = mapCorrectAnswers(allQuestions)
+    print('------------------------')
+    print(allcorrectAnswers)
+    print(answer)
+    print('------------------------')
+    return answer.content in allcorrectAnswers
 
 
-def calculateScore(answers, test, questions):
+def calculateScore(answers, test, allQuestions):
     score = 0
     correctAnswers = []
     for answer in answers:
-        if isAnswerCorrect(answer, questions):
+        if isAnswerCorrect(answer, allQuestions):
             correctAnswers.append(answer)
     if len(correctAnswers) > 0:
         for correctAnswer in correctAnswers:
@@ -79,3 +87,4 @@ def calculateScore(answers, test, questions):
 
 
 app.jinja_env.globals.update(checkAnswer=checkAnswer)
+app.jinja_env.globals.update(calculateScore=calculateScore)

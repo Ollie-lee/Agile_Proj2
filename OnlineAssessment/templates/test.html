@@ -36,6 +36,13 @@
 		{% endif %}
 	</div>
 	{% endfor %}
+
+	<form class="form-group" method="POST">
+		{{ form.hidden_tag() }}
+		<div class="form-group">
+			{{ form.submit(class="btn btn-outline-info") }}
+		</div>
+	</form>
 </div>
 
 {% endblock %}

@@ -9,3 +9,7 @@ class AnswerForm(FlaskForm):
     content = StringField(
         'Content', validators=[DataRequired()])
     submit = SubmitField('Submit')
+    
+class TestForm(FlaskForm):
+    # grab the date automatically from the Model later
+    submit = SubmitField('Submit')
