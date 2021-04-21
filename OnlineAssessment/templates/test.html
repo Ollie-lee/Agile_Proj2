@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+	<h1>Test</h1>
+	<div>{{test}}</div>
+</div>
+
+<div class="container">
+	{% for question in test.questions %}
+	<div class="card">
+		<div class="card-body">
+			<h2>{{ question.title }}
+			</h2>
+			<p class="card-text">{{ question.content[:100] }}...</p>
+		</div>
+
+		<form class="form-group" method="POST">
+			{{ form.hidden_tag() }}
+
+			<div class="form-group">
+				{{ form.content.label(class="form-control-label") }}
+				{{ form.content(class="form-control form-control-lg ") }}
+			</div>
+			<div class="form-group">
+				{{ form.user.label(class="form-control-label") }}
+				{{ form.user(class="form-control form-control-lg") }}
+			</div>
+			<div class="form-group">
+				{{ form.question.label(class="form-control-label") }}
+				{{ form.question(class="form-control form-control-lg") }}
+			</div>
+			<div class="form-group">
+				{{ form.submit(class="btn btn-outline-info") }}
+			</div>
+		</form>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %}

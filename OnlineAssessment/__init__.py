@@ -35,8 +35,17 @@ from OnlineAssessment.error_pages.handlers import error_pages
 from OnlineAssessment.core.views import core
 from OnlineAssessment.users.views import users
 from OnlineAssessment.questions.views import questions
+from OnlineAssessment.tests.views import tests
+
 # Register blueprint
 app.register_blueprint(core)
 app.register_blueprint(users)
 app.register_blueprint(error_pages)
 app.register_blueprint(questions)
+app.register_blueprint(tests)
+
+# with app.app_context():
+#     if db.engine.url.drivername == 'sqlite':
+#         Migrate.init_app(app, db, render_as_batch=True)
+#     else:
+#         Migrate.init_app(app, db)
