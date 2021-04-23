@@ -1,25 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-  <form class="form-group" method="POST">
-    {{ form.hidden_tag() }}
 
-    <div class="form-group">
-      {{ form.title.label(class="form-control-label") }}
-      {{ form.title(class="form-control form-control-lg ") }}
+
+
+  <div class="row justify-content-center mt-5 pt-5">
+    <div class="col-lg-6">
+      <div class="card bg-primary text-center card-form">
+        <div class="card-body">
+          <form class="form-group" method="POST">
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+              {{ form.title.label(class="form-control-label") }}
+              {{ form.title(class="form-control form-control-lg  mb-3") }}
+            </div>
+            <div class="form-group">
+              {{ form.content.label(class="form-control-label") }}
+              {{ form.content(class="form-control form-control-lg mb-3") }}
+            </div>
+            <div class="form-group">
+              {{ form.correct_answer.label(class="form-control-label mb-3") }}
+              {{ form.correct_answer(class="form-control form-control-lg mb-3") }}
+            </div>
+            <div class="form-group">
+              {{ form.submit(class="btn btn-light") }}
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      {{ form.content.label(class="form-control-label") }}
-      {{ form.content(class="form-control form-control-lg") }}
-    </div>
-    <div class="form-group">
-      {{ form.correct_answer.label(class="form-control-label") }}
-      {{ form.correct_answer(class="form-control form-control-lg") }}
-    </div>
-    <div class="form-group">
-      {{ form.submit(class="btn btn-outline-info") }}
-    </div>
-  </form>
+  </div>
 
 </div>
 

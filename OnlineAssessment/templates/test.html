@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="jumbotron">
+<div class="jumbotron mt-5 pt-5 d-flex justify-content-center" style="color: black;">
 	<h1>Test {{test.id}}</h1>
 </div>
 
-<div class="container">
+<div class="container" style="color: black;">
 	{% for question in test.questions %}
 	<div class="card">
 		<div class="card-body">
@@ -47,9 +47,10 @@
 
 		<!-- submit test -->
 		{% if test.finish == false %}
-		<form class="form-group" method="POST">
+		<form class="form-group d-flex justify-content-center" method="POST">
 			{{ form.hidden_tag() }}
-			<div class="form-group">
+			<div class="form-group d-flex flex-column justify-content-center">
+				<div class="lead mb-2">Submit Your Test!</div>
 				{{ form.submit(class="btn btn-outline-info") }}
 			</div>
 		</form>

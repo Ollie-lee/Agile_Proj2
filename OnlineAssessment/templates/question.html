@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="jumbotron">
-  <h1>{{ question.title }}</h1>
-  <p>{{question.content}}</p>
-  <p>{{question.correct_answer}}</p>
+<div class="jumbotron mt-5 pt-5" style="color: black;">
+  <h1>Question Title: {{ question.title }}</h1>
+  <p>Question Content: {{question.content}}</p>
+  <p>Correct Answer: {{question.correct_answer}}</p>
 </div>
 
 {% endblock content %}
