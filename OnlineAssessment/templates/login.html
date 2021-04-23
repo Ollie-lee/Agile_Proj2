@@ -1,10 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-<form method="POST">
-    {# This hidden_tag is a CSRF security feature. #}
-    {{ form.hidden_tag() }}
-    {{ form.email.label }} {{ form.email() }}
-    {{ form.password.label }} {{ form.password() }}
-    {{ form.submit() }}
-</form>
+
+<div class="row justify-content-center mt-5 pt-5">
+    <div class="col-lg-6">
+        <div class="card bg-primary text-center card-form">
+            <div class="card-body">
+                <h3>Sign Up Today</h3>
+                <p>Please fill out this form to register</p>
+                <form method="POST">
+                    {# This hidden_tag is a CSRF security feature. #}
+                    {{ form.hidden_tag() }}
+                    {{ form.email.label }} {{ form.email(class="form-control form-control-lg mb-5") }}
+                    {{ form.password.label }} {{ form.password(class="form-control form-control-lg mb-5") }}
+                    {{ form.submit(class="btn btn-outline-light btn-block mt-5") }}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 {% endblock %}

@@ -1,9 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="jumbotron">
-  <h1>Online Assessment</h1>
-  <p>Welcome to Coding Online Assessment!</p>
-</div>
+<!-- HOME SECTION -->
+<header id="home-section">
+  <div class="dark-overlay">
+    <div class="home-inner container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 d-none d-lg-block">
+          <h1 class="display-3 text-center">Welcome Online Code Assessment!
+          </h1>
+          <div class="d-flex justify-content-center">
+            <div class="p-4 align-self-end lead">
+              Improve Your Coding ability!
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div class="p-4 align-self-end lead">
+              Review Your Past Assessments!
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <div class="p-4 align-self-end lead">
+              Check Your Coding Scores!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 <div class="container">
   {% if current_user.is_authenticated %}
@@ -38,6 +64,27 @@
   {% endif %}
 
   {% if current_user.role == 'USER' %}
+  <!-- start new quiz -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center py-5">
+          <h1 class="display-4">Start New Quiz!</h1>
+          <a href="{{ url_for('tests.create_test') }}" class="btn text-dark bg-light">Click Here</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- past exam header -->
+  <section id="create-head-section" class="bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center py-5">
+          <h1 class="display-4">Your Past Assessments</h1>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- tests -->
   {% for test in tests %}
   <div class="card">
@@ -47,13 +94,19 @@
           href="{{ url_for('tests.test', test_id=test.id) }}">{{ 'Resume test {}'.format(test.id) }}</a>
       </h2>
       {% else %}
-      <span>Congratulation! you have finished this test! Your score is {{calculateScore(answers, test, allQuestions)}}!</span>
+      <span>Congratulation! you have finished this test! Your score is
+        {{calculateScore(answers, test)}}!
+      </span>
+
+      <p>
+        <a class="card-title" href="{{ url_for('tests.test', test_id=test.id) }}">Check Result!
+        </a>
+      </p>
       {% endif %}
 
     </div>
   </div>
   {% endfor %}
-  <a href="{{ url_for('tests.create_test') }}" class="btn btn-primary">Start New Test</a>
   {% endif %}
   {% endif %}
 </div>

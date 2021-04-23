@@ -1,4 +1,5 @@
 
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -33,7 +34,7 @@ login_manager.login_view = "users.login"
 
 
 # use blueprint to route
-
+from OnlineAssessment.models import Question
 from OnlineAssessment.tests.views import tests
 from OnlineAssessment.questions.views import questions
 from OnlineAssessment.users.views import users
@@ -56,28 +57,30 @@ def checkAnswer(answers, question):
     return flag
 
 
-def mapCorrectAnswers(allQuestions):
-    allCorrectAnswers = []
-    for question in allQuestions:
-        # print(question)
-        allCorrectAnswers.append(question.correct_answer)
-    return allCorrectAnswers
+def getUserAnswer(answers, question):
+    if len(answers) > 0:
+        for answer in answers:
+            if answer.question_id == question.id:
+                return answer.content
+    return "You didn't answer this question!"
+
+def showAnswerResult(answers, question):
+    if len(answers) > 0:
+        for answer in answers:
+            if answer.question_id == question.id:
+                return isAnswerCorrect(answer)
+    return False
+
+def isAnswerCorrect(answer):
+    question = Question.query.filter_by(id=answer.question_id).first()
+    return answer.content == question.correct_answer
 
 
-def isAnswerCorrect(answer, allQuestions):
-    allcorrectAnswers = mapCorrectAnswers(allQuestions)
-    print('------------------------')
-    print(allcorrectAnswers)
-    print(answer)
-    print('------------------------')
-    return answer.content in allcorrectAnswers
-
-
-def calculateScore(answers, test, allQuestions):
+def calculateScore(answers, test):
     score = 0
     correctAnswers = []
     for answer in answers:
-        if isAnswerCorrect(answer, allQuestions):
+        if isAnswerCorrect(answer):
             correctAnswers.append(answer)
     if len(correctAnswers) > 0:
         for correctAnswer in correctAnswers:
@@ -88,3 +91,5 @@ def calculateScore(answers, test, allQuestions):
 
 app.jinja_env.globals.update(checkAnswer=checkAnswer)
 app.jinja_env.globals.update(calculateScore=calculateScore)
+app.jinja_env.globals.update(showAnswerResult=showAnswerResult)
+app.jinja_env.globals.update(getUserAnswer=getUserAnswer)

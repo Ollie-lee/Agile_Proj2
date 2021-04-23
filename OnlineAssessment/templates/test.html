@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="jumbotron">
-	<h1>Test</h1>
-	<div>{{test}}</div>
-	<div>{{answers}}</div>
+	<h1>Test {{test.id}}</h1>
 </div>
 
 <div class="container">
@@ -13,36 +11,50 @@
 			<h2>{{ question.title }}
 			</h2>
 			<p class="card-text">{{ question.content }}</p>
-		</div>
 
-		{% if checkAnswer(answers, question)%}
-		<span>answered!!!!</span>
-		{% else %}
+			<!-- show correct answer and user answer if user has submitted individual question -->
+			{% if checkAnswer(answers, question) or test.finish ==True%}
+			<p>Did you answer this question correctly? --{{showAnswerResult(answers, question)}}</p>
+			<p>
+				Correct Answer: {{question.correct_answer}}
+			</p>
+			<p>
+				Your Answer: {{getUserAnswer(answers, question)}}
+			</p>
+			{% else %}
+
+			<!-- show submit individual button if test is not finished -->
+			{% if test.finish == false %}
+			<form class="form-group" method="POST">
+				{{ form.hidden_tag() }}
+				<div class="form-group">
+					{{ form.content.label(class="form-control-label") }}
+					{{ form.content(class="form-control form-control-lg ") }}
+				</div>
+				<div class="form-group" style="display: none;">
+					{{ form.question.label(class="form-control-label") }}
+					{{ form.question(class="form-control form-control-lg", value=question.id) }}
+				</div>
+
+				<div class="form-group">
+					{{ form.submit(class="btn btn-outline-info") }}
+				</div>
+			</form>
+			{% endif %}
+			{% endif %}
+		</div>
+		{% endfor %}
+
+		<!-- submit test -->
+		{% if test.finish == false %}
 		<form class="form-group" method="POST">
 			{{ form.hidden_tag() }}
-			<div class="form-group">
-				{{ form.content.label(class="form-control-label") }}
-				{{ form.content(class="form-control form-control-lg ") }}
-			</div>
-			<div class="form-group" style="display: none;">
-				{{ form.question.label(class="form-control-label") }}
-				{{ form.question(class="form-control form-control-lg", value=question.id) }}
-			</div>
-
 			<div class="form-group">
 				{{ form.submit(class="btn btn-outline-info") }}
 			</div>
 		</form>
 		{% endif %}
 	</div>
-	{% endfor %}
-
-	<form class="form-group" method="POST">
-		{{ form.hidden_tag() }}
-		<div class="form-group">
-			{{ form.submit(class="btn btn-outline-info") }}
-		</div>
-	</form>
 </div>
 
 {% endblock %}

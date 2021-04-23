@@ -13,10 +13,13 @@ def index():
     '''
     page = request.args.get('page', 1, type=int)
     questions = Question.query.paginate(page=page, per_page=5)
-    tests = Test.query.filter_by(user_id=current_user.id).all()
-    answers = Answer.query.filter_by(user_id=current_user.id).all()
     allQuestions = Question.query.all()
-
+    try:
+        tests = Test.query.filter_by(user_id=current_user.id).all()
+        answers = Answer.query.filter_by(user_id=current_user.id).all()
+    except AttributeError:
+        tests = []
+        answers = []
     return render_template('index.html', questions=questions, tests=tests, answers=answers, allQuestions=allQuestions)
 
 
