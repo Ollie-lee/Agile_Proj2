@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- HOME SECTION -->
+{% for message in get_flashed_messages() %}
+<div>{{ message }}<div>
+{% endfor %}
 <header id="home-section">
   <div class="dark-overlay">
     <div class="home-inner container">

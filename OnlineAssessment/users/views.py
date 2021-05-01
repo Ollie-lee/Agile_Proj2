@@ -31,14 +31,15 @@ def register():
 
 @users.route('/login', methods=['GET', 'POST'])
 def login():
-
+    if current_user.is_authenticated:
+        return redirect(url_for('core.index'))
     form = LoginForm()
     if form.validate_on_submit():
         # Get the user from User Models table
         user = User.query.filter_by(email=form.email.data).first()
         
         # The verify_password method comes from the User object
-        if user.check_password(form.password.data) and user is not None:
+        if user is not None and user.check_password(form.password.data):
             # Log in the user
             login_user(user)
             flash('Logged in successfully.')
@@ -53,6 +54,7 @@ def login():
                 next = url_for('core.index')
 
             return redirect(next)
+        flash('Invalid username or password')
     return render_template('login.html', form=form)
 
 
