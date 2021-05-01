@@ -54,7 +54,8 @@ def login():
                 next = url_for('core.index')
 
             return redirect(next)
-        flash('Invalid username or password')
+        # if the input email address or password is not correct
+        flash('Invalid email address or password.')
     return render_template('login.html', form=form)
 
 

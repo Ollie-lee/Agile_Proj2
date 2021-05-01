@@ -6,13 +6,30 @@
             <div class="card-body">
                 <h3>Sign Up Today</h3>
                 <p>Please fill out this form to register</p>
-                <form method="POST">
+                <form action="" method="POST" novalidate>
                     {# This hidden_tag is a CSRF security feature. #}
                     {{ form.hidden_tag() }}
+
                     {{ form.email.label }} {{ form.email(class="form-control form-control-lg mb-3") }}<br>
+                    {% for error in form.email.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
                     {{ form.username.label }} {{ form.username(class="form-control form-control-lg mb-3") }}<br>
+                    {% for error in form.username.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
                     {{ form.password.label }} {{ form.password(class="form-control form-control-lg mb-3") }}<br>
+                    {% for error in form.password.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
                     {{ form.pass_confirm.label }} {{ form.pass_confirm(class="form-control form-control-lg mb-3") }}<br>
+                    {% for error in form.pass_confirm.errors %}
+                    <span style="color: red;">{{ error }}</span>
+                    {% endfor %}
+
                     {{ form.role.label }} {{ form.role(class="form-control form-control-lg mb-3") }}<br>
                     {{ form.submit(class="btn btn-outline-light btn-block") }}
                 </form>

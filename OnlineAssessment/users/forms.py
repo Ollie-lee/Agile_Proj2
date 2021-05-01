@@ -24,14 +24,14 @@ class RegistrationForm(FlaskForm):
         'Confirm password', validators=[DataRequired()])
     role = SelectField(u'Role', choices=[
                        ('USER', 'User'), ('ADMIN', 'Administrator')])
-    submit = SubmitField('Register!')
+    submit = SubmitField('Sign Up')
 
-    def check_email(self, field):
+    def validate_email(self, field):
         # Check if not None for that user email!
         if User.query.filter_by(email=field.data).first():
             raise ValidationError('Your email has been registered!')
 
-    def check_username(self, field):
+    def validate_username(self, field):
         # Check if not None for that username!
         if User.query.filter_by(username=field.data).first():
             raise ValidationError('Your username has been registered!')
