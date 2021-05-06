@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<span>Congratulation! you have finished this test! Your score is
+	{{calculateScore(answers, test)}}!
+  </span>
+<div class="jumbotron mt-5 pt-5 d-flex justify-content-center" style="color: black;">
+	<h1>Test {{test.id}}</h1>
+</div>
+
+<div class="container" style="color: black;">
+	{% for question in test.questions %}
+	<div class="card">
+		<div class="card-body">
+			<h2>{{ question.title }}</h2>
+            <h4 class="question_number">Question {{ loop.index }}</h4>
+			<p class="card-text">{{ question.content }}</p>
+
+			<!-- show correct answer and user answer if user has submitted individual question -->
+			{% if checkAnswer(answers, question) or test.finish ==True%}
+			<p>Did you answer this question correctly? --{{showAnswerResult(answers, question)}}</p>
+			<p>Correct Answer: {{question.correct_answer}}</p>
+			<p>Your Answer: {{getUserAnswer(answers, question)}}</p>
+			
+			{% endif %}
+		</div>
+	</div>
+    {% endfor %}
+</div>
+{% endblock %}
