@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron mt-5 pt-5 d-flex justify-content-center" style="color: black;">
+	<h1>Test {{test.id}}</h1>
+</div>
+
+<div class="container" style="color: black;">
+	
+	<div class="card">
+		<div class="card-body">
+			<h2>
+			</h2>
+			<p class="card-text"></p>
+
+			<!-- show correct answer and user answer if user has submitted individual question -->
+			
+
+			<!-- show submit individual button if test is not finished -->
+			<button onclick="myFunction()" > Start Time! </button>
+			<script>
+				function myFunction() {
+  					document.getElementById("start_test").style.display = "block";
+				}
+			</script>
+    
+                <form class="form-group" action="{{ url_for('tests.test', test_id=test.id, question_num=question_num ) }}" method="POST">
+                    {{ form.hidden_tag() }}
+                    <h4 class="question_number">Question {{ question_num }}</h4>
+                    <p class="card-text">{{ questions[question_num-1].content }}</p>
+                    <div class="form-group">
+                        {{ form.content.label(class="form-control-label") }}
+                        {{ form.content(class="form-control form-control-lg ") }}
+                    </div>
+                    <div class="form-group" style="display: none;">
+                        {{ form.question.label(class="form-control-label") }}
+                        {{ form.question(class="form-control form-control-lg", value=questions[question_num-1].id) }}
+                    </div>
+
+                    <div class="form-group">
+                        {% if question_num == questions|length %}
+						{{ form.submit(class="btn btn-outline-info", value='Submit test') }}
+						{% else %}
+						{{ form.submit(class="btn btn-outline-info", value='Next') }}
+						{% endif %}
+                    </div>
+                </form>
+				
+			
+		
+		</div>
+		
+
+		<!-- submit test -->
+		
+		<form class="form-group d-flex justify-content-center" method="POST">
+			{{ form.hidden_tag() }}
+			<div class="form-group d-flex flex-column justify-content-center">
+				<div class="lead mb-2">Submit Your Test!</div>
+				
+			</div>
+		</form>
+	
+	</div>
+</div>
+
+{% endblock %}
