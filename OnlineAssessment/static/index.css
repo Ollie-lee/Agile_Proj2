@@ -40,3 +40,60 @@ body {
   padding: 5px;
   border-radius: 5px;
 }
+
+.content {
+  background-color: #fff;
+  color: black;
+  margin: 100px;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+pre {
+  padding: 5px;
+  background-color: rgb(137, 212, 247);
+  border-radius: 4px;
+}
+
+pre code {
+  padding: -5px;
+}
+
+table, th, td
+{
+    border: 1px solid black;
+}
+
+.test-button {
+  margin:auto;
+  width: 30%;
+}
+
+.correct {
+  background-color:green;
+  color: #fff;
+}
+
+.incorrect {
+  background-color: firebrick;
+  color: #fff;
+}
+
+.test-score {
+  float:left;
+  margin-left: 10%;
+}
+
+.test-date {
+  float:right;
+  margin-right: 10%;
+}
+
+.sc {
+  color: coral;
+  font-style: italic;
+  font-size: 30px;
+}
+
+
+  
