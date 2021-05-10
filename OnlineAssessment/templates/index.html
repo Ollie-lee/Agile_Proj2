@@ -9,24 +9,14 @@
     <div class="home-inner container">
       <div class="row justify-content-center">
         <div class="col-lg-8 d-none d-lg-block">
-          <h1 class="display-3 text-center">Welcome Online Code Assessment!
+          <h1 class="display-3 text-center">Welcome to learnSQL!
           </h1>
           <div class="d-flex justify-content-center">
             <div class="p-4 align-self-end lead">
-              Improve Your Coding ability!
+              <p>This site is all about learning SQL. The tutorial on this site are aimed at teaching you how to write SQL queries. 
+                Once you have completed the tutorial, you can take a test to check your SQL skills.</p>
             </div>
           </div>
-
-          <div class="d-flex justify-content-center">
-            <div class="p-4 align-self-end lead">
-              Review Your Past Assessments!
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <div class="p-4 align-self-end lead">
-              Check Your Coding Scores!
-            </div>
           </div>
         </div>
       </div>
@@ -94,7 +84,7 @@
     <div class="card-body">
       {% if test.finish == 0 %}
       <h2><a class="card-title"
-          href="{{ url_for('tests.test', test_id=test.id) }}">{{ 'Resume test {}'.format(test.id) }}</a>
+          href="{{ url_for('tests.test_results', test_id=test.id) }}">{{ 'Resume test {}'.format(test.id) }}</a>
       </h2>
       {% else %}
       <span>Congratulation! you have finished this test! Your score is
@@ -102,7 +92,7 @@
       </span>
 
       <p>
-        <a class="card-title" href="{{ url_for('tests.test', test_id=test.id) }}">Check Result!
+        <a class="card-title" href="{{ url_for('tests.test_results', test_id=test.id) }}">Check Result!
         </a>
       </p>
       {% endif %}
