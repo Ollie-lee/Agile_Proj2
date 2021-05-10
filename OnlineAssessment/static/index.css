@@ -55,13 +55,13 @@ pre {
   border-radius: 4px;
 }
 
-pre code {
-  padding: -5px;
-}
-
 table, th, td
 {
     border: 1px solid black;
+}
+
+th, td {
+  padding: 10px;
 }
 
 .test-button {
@@ -96,4 +96,9 @@ table, th, td
 }
 
 
-  
+.result-table {
+  color:black;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}  
