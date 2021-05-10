@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+{% if tests|length > 0 %}
 <!-- past exam header -->
 <section id="create-head-section" class="bg-primary">
     <div class="container">
@@ -10,30 +11,30 @@
       </div>
     </div>
   </section>
-{% if tests|length > 0 %}
-<!-- tests -->
-{% for test in tests %}
 <div class="card">
-  <div class="card-body">
-    {% if test.finish == 0 %}
-    <h2><a class="card-title"
-        href="{{ url_for('tests.test_results', test_id=test.id) }}">{{ 'Resume test {}'.format(test.id) }}</a>
-    </h2>
-    {% else %}
-    <span>Congratulation! you have finished this test! Your score is
-      {{calculateScore(answers, test)}}!
-    </span>
-
-    <p>
-      <a class="card-title" href="{{ url_for('tests.test_results', test_id=test.id) }}">Check Result!
-      </a>
-    </p>
-    {% endif %}
-
+  <div class="card body">  
+    <!-- result for each test -->
+    <div>
+    <table class="result-table">
+      <tr>
+          <th>Test Id</th>
+          <th>Test date</th>
+          <th>Score</th>
+          <th>Results</th>
+      </tr>
+      {% for test in tests %}
+      <tr>
+          <td>Test {{ test.id }}</td>
+          <td>{{ test.date }}</td>
+          <td>{{ calculateScore(test.answers, test) }}</td>
+          <td><a href="{{ url_for('tests.test_results', test_id=test.id) }}">Check Result</a><span></span></td>
+      </tr>
+      {% endfor %}
+    </table>
+    </div>
   </div>
 </div>
-{% endfor %}
-{% else %}
-<p>Click<a href="{{ url_for('tests.create_test') }}" >here</a> to take a test.</p>
-{% endif %}
+    {% else %}
+    <button type="button" class="btn-lg"><a href="{{ url_for('tests.create_test') }}">Start the Test</a></button>
+    {% endif %}
 {% endblock %}
