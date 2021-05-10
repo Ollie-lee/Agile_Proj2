@@ -69,8 +69,9 @@ def test_results(test_id):
 @login_required
 def my_results():
     tests = Test.query.filter_by(user_id=current_user.id).all()
-    answers = Answer.query.filter_by(user_id=current_user.id).all()
-    return render_template('my_results.html', answers=answers, tests=tests)
+    if tests is None:
+        tests = []
+    return render_template('my_results.html', tests=tests)
 
 
 '''
