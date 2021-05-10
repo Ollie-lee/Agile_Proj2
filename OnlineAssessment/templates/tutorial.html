@@ -1,86 +1,109 @@
 {% extends "base.html" %}
 {% block content %}
-<div>
-    <div>
-        <h1>How to write a SQL query</h1>
-    <h2>Overview</h2>
-    <p>SQL stands for Structured Query Language. SQL is a standard language for storing, manipulating and retrieving data in databases. 
-        In this tutorial you will learn how to select records from database tables using SQL select statement.
-        In this tutorial, we will use semicolon at the end of each SQL statement.</p>
-    <h2>The SQL SELECT Statement</h2>
-    <p>The SELECT statement is used to select data from a database.
-        The data returned is stored in a result table, called the result-set.</p>
-    <strong>Syntax:</strong>
-    <pre><code>
+<div class="container">
+    <div class="card"> 
+    <div class="content"> 
+        <!--First Part-->
+        <div class="slide">
+        <h1 class="text-center">How to write a SQL query</h1>
+        <h2>Overview</h2>
+        <p>SQL stands for Structured Query Language. SQL is a standard language for storing, manipulating and retrieving data in databases. 
+            In this tutorial you will learn how to select records from database tables using SQL select statement.
+            In this tutorial, we will use semicolon at the end of each SQL statement.</p>
+        </div>
+        <!--SELECT statement section-->
+        <div class="slide">
+            <h2>The SQL SELECT Statement</h2>
+            <p>The SELECT statement is used to select data from a database.
+                The data returned is stored in a result table, called the result-set.</p>
+            <strong>Syntax:</strong>
+            <pre><code>
 SELECT column1, column2, ...
 FROM table_name;
 WHERE condition;
-    </code></pre>
-    <p>If you want to select all the fields available in the table, use the following syntax:</p>
-    <pre><code>
+            </code></pre>
+            <p>If you want to select all the fields available in the table, use the following syntax:</p>
+            <pre><code>
 SELECT * FROM table_name;
-    </code></pre>
-    <p>Below is an example of a table calld “Customers”:</p>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Age</th>
-            <th>Email</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>John</td>
-            <td>M</td>
-            <td>21</td>
-            <td>john@gmail.com</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Bob</td>
-            <td>M</td>
-            <td>26</td>
-            <td>bob@gmail.com</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Jessica</td>
-            <td>F</td>
-            <td>22</td>
-            <td>jessica@gmail.com</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Zoe</td>
-            <td>F</td>
-            <td>25</td>
-            <td>zoe@gamil.com</td>
-        </tr>
-    </table>
-    <h3>SELECT * Example</h3>
-    <p>The following SQL statement selects all the columns from the "Customers" table:</p>
-    <pre><code>
+            </code></pre>
+            <p>Below is an example of a table called “Customers”:</p>
+            <table class="example-table">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John</td>
+                    <td>M</td>
+                    <td>21</td>
+                    <td>john@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bob</td>
+                    <td>M</td>
+                    <td>26</td>
+                    <td>bob@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Jessica</td>
+                    <td>F</td>
+                    <td>22</td>
+                    <td>jessica@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Zoe</td>
+                    <td>F</td>
+                    <td>25</td>
+                    <td>zoe@gamil.com</td>
+                </tr>
+            </table>
+            <h3>SELECT * Example</h3>
+            <p>The following SQL statement selects all the columns from the "Customers" table:</p>
+            <pre><code>
 SELECT * FROM Customers;
-    </code></pre>
-    <h3>SELECT Column Example</h3>
-    <p>The following SQL statement selects the "Name" column from the "Customers" table:</p>
-    <pre><code>
+            </code></pre>
+            <h3>SELECT Column Example</h3>
+            <p>The following SQL statement selects the "Name" column from the "Customers" table:</p>
+            <pre><code>
 SELECT Name FROM Customers;  
-    </code></pre>
-<h2>The SQL WHERE Clause</h2>
-<p>The WHERE clause is used to filter records.
-    It is used to extract only those records that fulfill a specified condition.</p>
-<strong>Example 1</strong>
-<p>The following SQL statement selects the customer whose name is John, in the "Customers" table:</p>
-<pre><code>
+            </code></pre>
+
+        </div>
+        <!--WHERE Clause section-->
+        <div class="slide"> 
+            <h2>The SQL WHERE Clause</h2>
+            <p>The WHERE clause is used to filter records.
+                It is used to extract only those records that fulfill a specified condition.</p>
+            <strong>Example 1</strong>
+            <p>The following SQL statement selects the customer whose name is John, in the "Customers" table:</p>
+            <pre><code>
 SELECT * FROM Customer WHERE Name='John';
-</code></pre>
-<strong>Example 2</strong>
-<p>The following SQL statement selects Names of customers whose are older than 22 in the "Customers" table:</p>
-<pre><code>
+            </code></pre>
+            <strong>Example 2</strong>
+            <p>The following SQL statement selects Names of customers whose are older than 22 in the "Customers" table:</p>
+            <pre><code>
 SELECT Name FROM Customer WHERE Age>22;
-</code></pre>
+            </code></pre>
+        </div>
+        <div>
+            <h6>Reference: <a href="https://www.w3schools.com">w3schools.com</a></h6>
+        </div>
+        <div class="test-button">
+            <button type="button" class="btn-lg"><a href="{{ url_for('tests.assessment') }}">Take a Test</a></button>
+        </div>
     </div>
+    </div>
+
+    
+    
 </div>
+
+
 {% endblock %}
