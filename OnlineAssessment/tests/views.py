@@ -7,6 +7,10 @@ from OnlineAssessment.tests.forms import AnswerForm, TestForm
 
 tests = Blueprint('tests', __name__)
 
+@tests.route('/assessment')
+@login_required
+def assessment():
+    return render_template('assessment.html')
 
 @tests.route('/create-test')
 @login_required
