@@ -13,16 +13,16 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 	</script>
-	<meta charset="utf-8">
+	<meta charset="utf-8" content="width=device-width">
 	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-	<title>Coding Online Assessment</title>
+	<title>learnSQL</title>
 </head>
 
 <body>
 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
 		<div class="container">
-			<a href="{{ url_for('core.index') }}" class="navbar-brand">Online Assessment</a>
+			<a href="{{ url_for('core.index') }}" class="navbar-brand">learnSQL</a>
 			<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -33,6 +33,8 @@
 					</li>
 					{% if current_user.is_authenticated %}
 					<li class="nav-item"><a class="nav-link" href="{{ url_for('core.tutorial') }}">Tutorial</a></li>
+					<li class="nav-item"><a class="nav-link" href="{{ url_for('tests.assessment') }}">Assessment</a></li>
+					<li class="nav-item"><a class="nav-link" href="{{ url_for('tests.my_results') }}">My Results</a></li>
 					<li class="nav-item"><a class="nav-link" href="{{ url_for('users.logout') }}">Log Out</a></li>
 					<li class="nav-item"><a class="nav-link" href="{{ url_for('users.account') }}">Account</a></li>
 					{% if current_user.role == 'ADMIN' %}
