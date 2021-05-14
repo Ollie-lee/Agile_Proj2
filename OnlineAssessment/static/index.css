@@ -13,7 +13,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  min-height: 700px;
+  min-height: 900px;
 }
 
 #home-section .dark-overlay {
@@ -21,7 +21,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 700px;
+  min-height: 900px;
   background: rgba(0, 0, 0, 0.7);
 }
 
@@ -64,9 +64,9 @@ th, td {
   padding: 10px;
 }
 
-.test-button {
-  margin:auto;
-  width: 30%;
+.test-button a{
+  text-decoration: none;
+  color: #333;
 }
 
 .correct {

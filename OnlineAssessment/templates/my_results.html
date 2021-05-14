@@ -15,19 +15,19 @@
   <div class="card body">  
     <!-- result for each test -->
     <div>
-    <table class="result-table">
-      <tr>
+    <table class="result-table table table-hover table-striped my-5 table-bordered">
+      <thead class="thead-dark">
           <th>Test Id</th>
           <th>Test date</th>
           <th>Score</th>
           <th>Results</th>
-      </tr>
+      </thead>
       {% for test in tests %}
       <tr>
           <td>Test {{ test.id }}</td>
           <td>{{ test.date }}</td>
           <td>{{ calculateScore(test.answers, test) }}</td>
-          <td><a href="{{ url_for('tests.test_results', test_id=test.id) }}">Check Result</a><span></span></td>
+          <td><a class="btn btn-outline-primary" href="{{ url_for('tests.test_results', test_id=test.id) }}">Check Result</a><span></span></td>
       </tr>
       {% endfor %}
     </table>

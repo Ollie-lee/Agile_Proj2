@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <div class="content">
-        <p>The short test consists of 5 questions. All questions are short answers. 
-            You will get 10 marks for each correct answer. After you complete the test, your test result will be dispalyed.</p>
-        <div class="test-button"> 
-            <button type="button" class="btn-lg"><a href="{{ url_for('tests.create_test') }}">Start the Test</a></button>
-        </div>
+    <div class="content d-flex align-content-center justify-content-center flex-column">
+        <p class="mb-5">The short test consists of 5 questions. All questions are short answers.
+            You will get 10 marks for each correct answer. After you complete the test, your test result will be
+            dispalyed.</p>
+        <a href="{{ url_for('tests.create_test') }}" type="button"
+            class="text-dark btn-lg btn btn-outline-success test-button">Start
+            the Test</a>
     </div>
 </div>
 {% endblock %}
