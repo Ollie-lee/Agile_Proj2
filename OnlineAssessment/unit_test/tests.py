@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 import unittest
-import sys 
-sys.path.append("..")
+
 from OnlineAssessment import db, app
 from OnlineAssessment.models import User, Question, Answer, Test
 
