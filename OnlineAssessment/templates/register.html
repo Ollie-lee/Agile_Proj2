@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-body bg-light text-dark">
                 <h3 class="card-title text-center mb-4 mt-1">Sign Up Today</h3>
-                <form action="" method="POST" novalidate>
+                <form action="{{ url_for('users.register') }}" method="POST" novalidate>
                     {# This hidden_tag is a CSRF security feature. #}
                     {{ form.hidden_tag() }}
                     <div class="form-group">

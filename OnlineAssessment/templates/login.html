@@ -9,7 +9,7 @@
                 {% for message in get_flashed_messages() %}
                 <span>{{ message }}<span>
                 {% endfor %}
-                <form action="" method="POST" novalidate>
+                <form action="{{ url_for('users.login') }}" method="POST" novalidate>
                     {# This hidden_tag is a CSRF security feature. #}
                     {{ form.hidden_tag() }}
                     <div class="form-group">

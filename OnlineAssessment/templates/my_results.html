@@ -37,6 +37,14 @@
   </div>
 </div>
     {% else %}
-    <button type="button" class="btn-lg"><a href="{{ url_for('tests.create_test') }}">Start the Test</a></button>
+    <section id="create-head-section" class="bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center py-5">
+            <h2 class="display-4">You haven't take any tests. Click <a class="btn-lg btn btn-success test-button" href="{{ url_for('tests.create_test') }}"> here</a> to take a test and check your SQL skills.</h2>
+          </div>
+        </div>
+      </div>
+    </section>
     {% endif %}
 {% endblock %}
