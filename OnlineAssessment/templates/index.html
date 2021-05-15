@@ -2,7 +2,7 @@
 {% block content %}
 <!-- HOME SECTION -->
 {% for message in get_flashed_messages() %}
-<div>{{ message }}<div>
+<div>{{ message }}</div>
     {% endfor %}
     <header id="home-section" style="min-height: 900px;">
       <div class="dark-overlay" style="min-height: 900px;">
@@ -57,7 +57,6 @@
           </div>
         </div>
       </div>
-  </div>
   </header>
   <div class="d-flex justify-content-center">
     <p class="lead">Reference: Pictures are from unsplash.</p>
@@ -95,41 +94,6 @@
       </ul>
     </nav>
     {% endif %}
-
-    {% if current_user.role == 'USER' %}
-    <!-- start new quiz -->
-    <!-- <section>
-      <div class="container">
-        <div class="row">
-          <div class="col text-center py-5">
-            <h1 class="display-4">Start New Quiz!</h1>
-            <button href="{{ url_for('tests.create_test') }}" type="button" class="btn btn-light">Click Here</a>
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- past exam header -->
-    <section id="create-head-section" class="bg-primary mt-5">
-      <div class="container">
-        <div class="row">
-          <div class="col text-center py-5">
-            <h1 class="display-4">Your Past Assessments</h1>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- tests -->
-    {% for test in tests %}
-    <div class="card">
-      <div class="card-body">
-        <a class="card-title" href="{{ url_for('tests.test_results', test_id=test.id) }}">Check Result!
-        </a>
-      </div>
-    </div>
-    {% endfor %}
-    {% endif %}
     {% endif %}
   </div>
-</div>
-<script src="{{url_for('static', filename='config.js')}}"></script>
 {% endblock %}
