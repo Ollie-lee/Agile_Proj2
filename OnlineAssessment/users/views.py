@@ -83,12 +83,4 @@ def account():
 
     return render_template('account.html', form=form)
 
-#username may change depending on user
-@users.route("/<username>")
-def user_answers(username):
-    # cycle through user answers using pages.
-    page = request.args.get('page', 1, type=int)
-    user = User.query.filter_by(username=username).first_or_404()
-    answers = Answer.query.filter_by(author=user).order_by(
-        Answer.date.desc()).paginate(page=page, per_page=5)
-    return render_template('user_answers.html', answers=answers, user=user)
+
