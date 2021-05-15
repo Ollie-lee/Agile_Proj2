@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="jumbotron">
-  <div align='center' style="color: black;">
+  <div class="text-center" style="color: black;">
     <h1>Welcome to the page for {{current_user.username}}</h1>
     <p>{{ current_user.email }}</p>
   </div>
@@ -12,7 +12,7 @@
   <div class="col-lg-5">
     <div class="card">
       <div class="card-body bg-light text-dark">
-        <form method="POST" action="" enctype="multipart/form-data">
+        <form method="POST" action="{{ url_for('users.account') }}" enctype="multipart/form-data">
           {{ form.hidden_tag() }}
           <div class="form-group">
             {{ form.username.label(class="form-group") }}
