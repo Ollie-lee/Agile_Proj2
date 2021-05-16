@@ -1,0 +1,419 @@
+commit 18d88e1c6c8d9b0a7b89717ba17fb36bfcf10b2e
+Author: jialing <test@gmail.com>
+Date:   Sun May 16 05:13:35 2021 +0800
+
+    delete user_answer view
+
+commit 70582f512a0dfb939d4427d971b9e4fd89c70130
+Author: jialing <test@gmail.com>
+Date:   Sun May 16 05:11:30 2021 +0800
+
+    add css styles
+
+commit b04df26a8472bbda5b79900f0b7c4f27902a8e83
+Author: jialing <test@gmail.com>
+Date:   Sun May 16 04:35:56 2021 +0800
+
+    modify test_question page
+
+commit 5c3e4276f338f8c6db0d5bdb312360cb957c779d
+Author: jialing <test@gmail.com>
+Date:   Sun May 16 04:24:27 2021 +0800
+
+    modify result table head
+
+commit 2d3236bf33cb3d362f6a62704f03b89dcc8c71d0
+Author: jialing <test@gmail.com>
+Date:   Sun May 16 04:01:36 2021 +0800
+
+    modify buttons
+
+commit dd0afe1e746d840970a61234c761ffc2c74c8f94
+Author: jialing <test@gmail.com>
+Date:   Sun May 16 03:47:55 2021 +0800
+
+    modified home page
+
+commit 8017e0aea39c2fc779443a19f8fcaca80d3719e6
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Sun May 16 09:59:42 2021 +0800
+
+    finish
+
+commit ef77082d8a63bd742f9aabc7c9eb7ae2def42271
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Sun May 16 09:49:43 2021 +0800
+
+    finish
+
+commit dbaa42764609aabb549da20f43c67ff28e1048d8
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri May 14 17:31:57 2021 +0800
+
+    add README.md
+
+commit b42adfb0773ba6bff630fe7a437cb2614ea89b7f
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri May 14 16:03:44 2021 +0800
+
+    change image
+
+commit c0bf765f5ecfb1224f845debaf4e261558f83015
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri May 14 15:55:03 2021 +0800
+
+    add style
+
+commit 54c6b5a3d8da50987cfa2c180d3d389c2821acd9
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri May 14 14:44:44 2021 +0800
+
+    add test
+
+commit 8523a97b5ab313a9b08a7b672cc1747039b76ef1
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri May 14 12:10:05 2021 +0800
+
+    add test
+
+commit b0272258b14d1f2ad3f6e62062009736d4e9d16e
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri May 14 10:24:59 2021 +0800
+
+    clean db
+
+commit f3a8ca123fd21e60ca2a20eadbd19f8a7bd653ee
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri May 14 09:35:01 2021 +0800
+
+    re init db
+
+commit f1a0dba667b787dfaae9ec58ba900233680be410
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri May 14 09:23:02 2021 +0800
+
+    init
+
+commit 55bcb7ba7fd5014e5308eb07d7550f8ccd818cfe
+Author: Cathyling <66588908+Cathyling@users.noreply.github.com>
+Date:   Tue May 11 21:12:25 2021 +0800
+
+    Create README.md
+
+commit 99ffe5bec7fb6dd72a98f158207ed7f30218c995
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 06:13:57 2021 +0800
+
+    add delete question fuction
+
+commit 3f12e9e9d7cdae48c2ba1008e1fa63d9ac0f3269
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 05:54:14 2021 +0800
+
+    create deleteQuestionForm
+
+commit 485537e71ce2d10502675500de7b6f8dcd8cdd44
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 05:45:44 2021 +0800
+
+    rename QuestionForm
+
+commit f1fa10f9345b8c19e025722509b484b24db01994
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 05:38:20 2021 +0800
+
+    delete test.html
+
+commit 32712cdbc6e008374ffe06bce39e456f937e9cc8
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 05:34:06 2021 +0800
+
+    style account page
+
+commit c5f5be928337fe7a73ee9aa4f1488045f335b829
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 05:14:33 2021 +0800
+
+    edit home page
+
+commit dfcdb3aa2b1ce8450c6a6c1572550014989cbf67
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 05:13:56 2021 +0800
+
+    edit home page
+
+commit c5a3b23cb21b1e4b4a5e8df94731044283c03faf
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 05:13:11 2021 +0800
+
+    style my_result.html
+
+commit c5a72411d5856d09610c29121499a994eb06f3be
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 05:12:30 2021 +0800
+
+    edit test_question.html
+
+commit 148bc60ef95405b0645501b5c32ce683c36f2cd2
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 05:11:52 2021 +0800
+
+    edit my_result.html
+
+commit cf645d219e394753a7ab1b43001d582d530952e9
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 05:11:18 2021 +0800
+
+    modified my_result view function
+
+commit 3c8a3c3531d866aa7077f5dd8d2e0694f9ae6d72
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 03:46:23 2021 +0800
+
+    modified styles
+
+commit eb68780f69599a16c3fcc121987fe50ac8b33b61
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 03:44:56 2021 +0800
+
+    modified test_result page
+
+commit 2e36c86e128ac518d4ee00db3cb53416ef1f1760
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 01:38:48 2021 +0800
+
+    style assessment page
+
+commit 66ae1a0d5ca17ab46957f5395d912beb15c610df
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 01:38:28 2021 +0800
+
+    style tutorial page
+
+commit 661187af427c06f1dac322044aae1b68ea5367ea
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 00:13:20 2021 +0800
+
+    create assessment view
+
+commit e03001078287e1b0be0449875498f378aad50bfb
+Author: jialing <test@gmail.com>
+Date:   Tue May 11 00:12:41 2021 +0800
+
+    create assessment page
+
+commit 44cea009f9b71bc5ba6a9d853545824a2a3c9de8
+Author: jialing <test@gmail.com>
+Date:   Fri May 7 08:21:25 2021 +0800
+
+    style register page
+
+commit b7f4bff1cea635b0853fcd049ff911d3b9871ba8
+Author: jialing <test@gmail.com>
+Date:   Fri May 7 07:56:44 2021 +0800
+
+    modified login page
+
+commit ce829564b1bed4911ff97c9606b2531fafab6280
+Author: jialing <test@gmail.com>
+Date:   Fri May 7 07:43:51 2021 +0800
+
+    style log in form
+
+commit 5b3fa45e2ebf74394bb177bb590a24732e3f27de
+Author: jialing <test@gmail.com>
+Date:   Fri May 7 04:36:49 2021 +0800
+
+    delete info page
+
+commit d81875429e93598ae30864d685e9d5e8d9e5678e
+Author: jialing <test@gmail.com>
+Date:   Fri May 7 03:57:50 2021 +0800
+
+     create a my_results page
+
+commit e00b871d47d2f0e2d1743559e89adb7ab9282f9b
+Author: jialing <test@gmail.com>
+Date:   Fri May 7 03:57:00 2021 +0800
+
+    create a test_results page
+
+commit 8f6934634b2e24f488e6cc11d24a2f0253c17dfe
+Author: jialing <test@gmail.com>
+Date:   Fri May 7 03:56:20 2021 +0800
+
+    create a test_question page
+
+commit 0e64a4acc6893f3fa39d8ce38cc4575296813020
+Author: jialing <test@gmail.com>
+Date:   Fri May 7 03:55:21 2021 +0800
+
+    add test_results & my_results view functions
+
+commit c5022a338ddb10f27ed80ab05a298a27512c6d4a
+Author: jialing <test@gmail.com>
+Date:   Fri May 7 03:52:42 2021 +0800
+
+    delete user_answers.html
+
+commit b3a808ecd7eee6bce2b3fd91897df1aca0f89bd8
+Author: jialing <test@gmail.com>
+Date:   Thu May 6 23:25:29 2021 +0800
+
+    create tutorial html page
+
+commit 589cdc65f115d80395d2f95b2673322a7d16ed72
+Author: jialing <test@gmail.com>
+Date:   Thu May 6 23:18:11 2021 +0800
+
+    create a tutorial view function
+
+commit 6fc5fabdeb2214b595f9fea69ae81abedde5b7e0
+Author: jialing <test@gmail.com>
+Date:   Sat May 1 10:37:59 2021 +0800
+
+    fixed registrationform validate function
+
+commit 6cab7abc9a3dd848e41281f84cec9faece83bff0
+Author: jialing <test@gmail.com>
+Date:   Sat May 1 09:41:59 2021 +0800
+
+    fixed login view function
+
+commit 3d795b3dcd5c2cb74136f0f9dcabdd5e07e4419a
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri Apr 23 21:18:34 2021 +0800
+
+    add requirements
+
+commit 45a71ecb00180674844885730059db0dab7e4535
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri Apr 23 20:38:24 2021 +0800
+
+    finish
+
+commit 363d5615c6e4b632abe3a6b37c4a28e3280f25b2
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri Apr 23 19:57:52 2021 +0800
+
+    change style
+
+commit a068eb40b10d73079d18b29551da181e3a04a178
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Wed Apr 21 18:22:17 2021 +0800
+
+    finished
+
+commit f006ad59648d494165e40ef6606365576d1a166c
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Wed Apr 21 17:36:47 2021 +0800
+
+    test
+
+commit 835dc0269be6b8005df14ed170ac95b7d7bf2d7e
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Wed Apr 21 14:55:00 2021 +0800
+
+    basic finished
+
+commit 00248c4c020c0d0164cc097236327266a220441f
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Wed Apr 21 10:15:25 2021 +0800
+
+    finish
+
+commit 1afec976a2a0b965ea07c23a07b81cf656520297
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Wed Apr 21 09:56:00 2021 +0800
+
+    clean
+
+commit cea4362563a9db917ff2795e1bbf8de61d42fee6
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Wed Apr 21 09:43:14 2021 +0800
+
+    clean
+
+commit 1f4424c4c6a0ccd4402bb3b8ffa6ea44062fc226
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Wed Apr 21 09:41:34 2021 +0800
+
+    change
+
+commit 34f0d162e71d69520014686c15de73468985b915
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Wed Apr 21 09:41:20 2021 +0800
+
+    change
+
+commit 77ccd2ac591301d94018b09bc30a42934aa3f8cf
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Wed Apr 21 09:41:13 2021 +0800
+
+    change
+
+commit 27550e98bdaffaec6c317bbbecea6b49345f04e5
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Tue Apr 20 19:03:28 2021 +0800
+
+    change schema
+
+commit 7c4640c780b3f001be3809adff745b5af3b67fd0
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Tue Apr 20 17:57:22 2021 +0800
+
+    update db
+
+commit 00449b43d1033f59bfdbce366b108f115a288a8a
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Sat Apr 10 21:35:26 2021 +0800
+
+    create question
+
+commit 16ac42871d71a218188346f77945955a603b3274
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Fri Apr 9 22:31:55 2021 +0800
+
+    set up db
+
+commit 6eaa1a0b968fbfd44ee3c15a6ef0df3a4e22daaf
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Thu Apr 8 21:57:54 2021 +0800
+
+    set up database
+
+commit 33fb730722d712e08bf827ede421a54412be1439
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Thu Apr 8 21:34:03 2021 +0800
+
+    add more view
+
+commit d1974d59a2ae8a541ed22484e4336072b8a57bd8
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Wed Apr 7 22:14:16 2021 +0800
+
+    set up model
+
+commit ea38201735fc0029ef8492247020b26454611b35
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Tue Apr 6 21:51:03 2021 +0800
+
+    set up route handler
+
+commit d0e7f15e05576cd97b5c5a1e898a3be3132eb721
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Tue Apr 6 21:32:35 2021 +0800
+
+    set up route
+
+commit 7113f711ce2f5aa676c4c0fb720392b028546a29
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Tue Apr 6 21:10:36 2021 +0800
+
+    change name
+
+commit 9a749b38a2506a0974de13a402c6ba4593d7e253
+Author: Ollie <myself.ollie.lee@gmail.com>
+Date:   Tue Apr 6 21:05:07 2021 +0800
+
+    basic set up
