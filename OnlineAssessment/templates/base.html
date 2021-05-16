@@ -33,8 +33,10 @@
 					</li>
 					{% if current_user.is_authenticated %}
 					<li class="nav-item"><a class="nav-link" href="{{ url_for('core.tutorial') }}">Tutorial</a></li>
-					<li class="nav-item"><a class="nav-link" href="{{ url_for('tests.assessment') }}">Assessment</a></li>
-					<li class="nav-item"><a class="nav-link" href="{{ url_for('tests.my_results') }}">My Results</a></li>
+					<li class="nav-item"><a class="nav-link" href="{{ url_for('tests.assessment') }}">Assessment</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="{{ url_for('tests.my_results') }}">My Results</a>
+					</li>
 					<li class="nav-item"><a class="nav-link" href="{{ url_for('users.logout') }}">Log Out</a></li>
 					<li class="nav-item"><a class="nav-link" href="{{ url_for('users.account') }}">Account</a></li>
 					{% if current_user.role == 'ADMIN' %}
