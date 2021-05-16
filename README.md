@@ -1,39 +1,32 @@
 # CITS5505 Agile Web Development Project 2
 ## Puporse
-This Web applcaiton is designed to help people learn SQL knowledge. It has the tutorial and assessment feature.
-This site is all about learning SQL. The tutorial on this site are aimed at teaching you how towrite SQL queries.
+This Web applcaiton is designed to help people learn SQL skills. It has the tutorial and assessment feature.
+This site is all about learning SQL. The tutorial on this site are aimed at teaching you how to write SQL queries.
 Once you have completed the tutorial, you can take a test to check your SQL skills.
 ## Architecture
-Front-end: HTML, CSS, Jinja, JS
-Back-end: Flask
-## Launching the Application
+The client-side of the application is designed using HTML, CSS, JavaScript and Jinjia2. The sever side is developed using Flask framework. The database is developed on SQLite3.
+## Getting Started
+### Prerequisites
+To run this application, Python3 and SQLite3 are required to be installed.
+- Python3.8  
+`$ sudo apt-get install python3.8 python3-pip`  
+- SQLite3  
+` $ sudo apt-get install sqlite3`  
+### Installing
+- Set up a virtual environment:  
+`$ python3 -m venv venv`  
+- Activate the virtual environment:  
+ `$ source venv/bin/activate`  
+- Install all required packages:  
+`$ pip install -r requirements.txt`  
+- Run the application:  
+`$ flask run`  
 in the Agile_Proj2 Folder:
 `python app.py`
-## Launching Unit tests
-in the Agile_Proj2 Folder:
-`python tests.py`
-
-## Portion of git log
-commit 2d3236bf33cb3d362f6a62704f03b89dcc8c71d0
-Author: jialing <test@gmail.com>
-Date:   Sun May 16 04:01:36 2021 +0800
-
-    modify buttons
-
-commit dd0afe1e746d840970a61234c761ffc2c74c8f94
-Author: jialing <test@gmail.com>
-Date:   Sun May 16 03:47:55 2021 +0800
-
-    modified home page
-
-commit 8017e0aea39c2fc779443a19f8fcaca80d3719e6
-Author: Ollie <myself.ollie.lee@gmail.com>
-Date:   Sun May 16 09:59:42 2021 +0800
-
-    finish
-
-commit ef77082d8a63bd742f9aabc7c9eb7ae2def42271
-Author: Ollie <myself.ollie.lee@gmail.com>
-Date:   Sun May 16 09:49:43 2021 +0800
-
-    finish
+## Unit tests
+To run the unit tests:  
+`$ python tests.py`
+## Authors
+- Jialing Liu (23125467)
+## Contributions
+See the commit logs in the full_git_log.txt file
