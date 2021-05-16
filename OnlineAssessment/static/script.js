@@ -1,3 +1,4 @@
+//for test count down timer
 function getTimeRemaining(endtime) {
 	const total = Date.parse(endtime) - Date.parse(new Date());
 	const seconds = Math.floor((total / 1000) % 60);
