@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, TextAreaField, IntegerField
+from wtforms import StringField, SubmitField, IntegerField
 from wtforms.validators import DataRequired
 
 
@@ -10,6 +10,4 @@ class AnswerForm(FlaskForm):
         'Content', validators=[DataRequired()], default='Fill in your answer!')
     submit = SubmitField('Submit')
     
-class TestForm(FlaskForm):
-    # grab the date automatically from the Model later
-    submit = SubmitField('Submit')
+
