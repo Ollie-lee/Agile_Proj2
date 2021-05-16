@@ -25,9 +25,9 @@ def create_question():
     return render_template('create_question.html', form=form)
 
 # view question and delete question
-@questions.route('/<int:question_id>')
+@questions.route('/<int:question_id>', methods=['GET', 'POST'])
 @login_required
-def question(question_id, methods=['GET', 'POST']):
+def question(question_id):
     # grab the requested blog post by id number or return 404
     question = Question.query.get_or_404(question_id)
     form = DeleteQuestionForm()
