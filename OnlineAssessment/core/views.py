@@ -22,15 +22,8 @@ def index():
         answers = []
     return render_template('index.html', questions=questions, tests=tests, answers=answers, allQuestions=allQuestions)
 
-
-@core.route('/info')
-def info():
-    '''
-    one promoting the theme and purpose to users;
-    '''
-    return render_template('info.html')
-
 @core.route('/tutorial')
+@login_required
 def tutorial():
     '''
     This is the tutorial page view function
