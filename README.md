@@ -21,12 +21,11 @@ To run this application, Python3 and SQLite3 are required to be installed.
 `$ pip install -r requirements.txt`  
 - Run the application:  
 `$ flask run`  
-in the Agile_Proj2 Folder:
-`python app.py`
 ## Unit tests
 To run the unit tests:  
 `$ python tests.py`
 ## Authors
 - Jialing Liu (23125467)
+- Ollie Li (22693423)
 ## Contributions
 See the commit logs in the full_git_log.txt file
