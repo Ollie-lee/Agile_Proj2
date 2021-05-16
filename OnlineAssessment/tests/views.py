@@ -22,6 +22,7 @@ def create_test():
     question_num=1
     return redirect(url_for('tests.test', test_id=test.id, question_num=question_num ))
 
+# This page shows the test question
 @tests.route('/test/<int:test_id>/<int:question_num>', methods=['GET', 'POST'])
 @login_required
 def test(test_id, question_num):
@@ -41,14 +42,12 @@ def test(test_id, question_num):
         db.session.commit()
         question_num +=1
         if question_num <= len(questions):
-            flash("Answer uploaded!")
             return redirect(url_for('tests.test', test_id=test.id, question_num=question_num ))
         else:
             test.finish = True
             db.session.commit()
             flash("Test submitted!")
-            return redirect(url_for('tests.test_results', test_id=test_id))
-    #if testForm.validate_on_submit():       
+            return redirect(url_for('tests.test_results', test_id=test_id))      
     return render_template('test_question.html', test=test, questions=questions, form=form, answers=answers, question_num=question_num)
 
 # This page shows results after a user completes a test

@@ -2,7 +2,7 @@ from flask import render_template, url_for, flash, redirect, request, Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
 from OnlineAssessment import db
 from werkzeug.security import generate_password_hash, check_password_hash
-from OnlineAssessment.models import User, Answer
+from OnlineAssessment.models import User
 from OnlineAssessment.users.forms import RegistrationForm, LoginForm, UpdateUserForm
 
 
@@ -64,7 +64,7 @@ def logout():
     logout_user()
     return redirect(url_for('core.index'))
 
-
+# This page is for the user to change username and email
 @users.route("/account", methods=['GET', 'POST'])
 @login_required
 def account():
