@@ -13,7 +13,7 @@ in the Agile_Proj2 Folder:
 in the Agile_Proj2 Folder:
 `python tests.py`
 
-## portion of git log
+## Portion of git log
 commit 2d3236bf33cb3d362f6a62704f03b89dcc8c71d0
 Author: jialing <test@gmail.com>
 Date:   Sun May 16 04:01:36 2021 +0800
