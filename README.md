@@ -1,5 +1,5 @@
 # CITS5505 Agile Web Development Project 2
-## Puporse
+## Purpose
 This Web applcaiton is designed to help people learn SQL skills. It has the tutorial and assessment feature.
 This site is all about learning SQL. The tutorial on this site are aimed at teaching you how to write SQL queries.
 Once you have completed the tutorial, you can take a test to check your SQL skills.
